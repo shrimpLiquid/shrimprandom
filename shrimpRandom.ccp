@@ -1,14 +1,13 @@
 #include "shrimpRandom.h"
 
+// The 'shrimpRandom::' part is what links this code to the header
 unsigned long shrimpRandom::generate(unsigned long howsmall, unsigned long howbig, int pin, int avg) {
-    unsigned long value = 0; // Changed to unsigned long to match return type
-
+    unsigned long value = 0;
     for (int i = 0; i <= 63; i++) {
         int bit = analogRead(pin) / avg;
         value *= 2;
         value += bit;
     }
-    
     value = (value % ((howbig + 1) - howsmall) + howsmall);
     return value;
 }
