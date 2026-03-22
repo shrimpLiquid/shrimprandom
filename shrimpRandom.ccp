@@ -1,6 +1,5 @@
-#include "shrimpRandom.h"
+#include <shrimpRandom.h>
 
-// The 'shrimpRandom::' part is what links this code to the header
 unsigned long shrimpRandom::generate(unsigned long howsmall, unsigned long howbig, int pin, int avg) {
     unsigned long value = 0;
     for (int i = 0; i <= 63; i++) {
