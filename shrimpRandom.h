@@ -7,7 +7,7 @@ class shrimpRandom {
   public:
     static unsigned long generate(unsigned long howsmall, unsigned long howbig, int pin, int avg) {
         unsigned long value = 0;
-        for (int i = 0; i <= 63; i++) {
+        for (int i = 0; i <= 127; i++) {
             int bit = analogRead(pin) / avg;
             value *= 2;
             value += bit;
